@@ -1,11 +1,11 @@
 # Citi-Hackathon
 
 ## Run Backend
-cd backend
-source venv/bin/activate
-flask run
+cd backend <br>
+source venv/bin/activate <br>
+flask run <br>
 
 ## Run Frontend
-cd frontend
-npm install
+cd frontend <br>
+npm install <br>
 npm run dev
