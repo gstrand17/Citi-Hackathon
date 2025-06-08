@@ -1,23 +1,24 @@
-import {useEffect, useState} from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Routes, Route, Link } from 'react-router-dom';
+import Home from './pages/Home.jsx';
+import Navbar from './pages/Navbar.jsx';
+import Page1 from './pages/page1.jsx';
+import Page2 from './pages/page2.jsx';
+import Page3 from './pages/page3.jsx';
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  useEffect(() => {
-    fetch('/api/home')
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message))
-      .catch((err) => setMessage('Error fetching data'));
-  }, []);
-
   return (
-    <>
-      <h1>Citi Hackathon</h1>
-    </>
+      <div>
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/page1" element={<Page1/>}/>
+          <Route path="/page2" element={<Page2/>}/>
+          <Route path="/page3" element={<Page3/>}/>
+        </Routes>
+      </div>
   )
+
 }
 
-export default App
+export default App;

@@ -1,0 +1,33 @@
+.navbar{
+    background-color: blue;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+}
+.nav-list{
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    padding-right: 40px;
+    align-items: center;
+    float: right;
+    width: 100%;
+}
+.nav-item{
+    list-style-type: none;
+    margin: 0;
+}
+.nav-title{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    text-wrap: nowrap;
+    font-weight: bold;
+}
