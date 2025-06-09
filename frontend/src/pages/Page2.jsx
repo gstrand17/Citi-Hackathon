@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import './Page2.css';
-//import GrowthChart from './chart';
+import GrowthChart from './chart';
 function Page2() {
   const [form, setForm] = useState({
     current_age: 25,
