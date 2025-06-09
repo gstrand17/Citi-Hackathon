@@ -20,7 +20,9 @@
     margin: 0;
     white-space: nowrap;
 }
+.nav-logo{
 
+}
 .nav-list {
     list-style: none;
     display: flex;
