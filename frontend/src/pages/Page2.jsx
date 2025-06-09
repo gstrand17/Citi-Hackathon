@@ -79,11 +79,9 @@ function Page2() {
           <p className="placeholder">Your results will appear here.</p>
         )}
 
-        <GrowthChart currentAge={form.current_age}
-                      retirementAge={form.retirement_age}
-                      annualContribution={form.annual_contribution}
-                      incomePercent={form.income_percent}
-                      annualReturn={form.annual_return}/>
+       {estimate?.x_axis && estimate?.y_axis && (
+  <GrowthChart x_axis={estimate.x_axis} y_axis={estimate.y_axis} />
+    )}
       </div>
 
 
