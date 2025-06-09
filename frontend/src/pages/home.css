@@ -1,0 +1,93 @@
+/* Neueda-Hackathon/frontend/src/pages/Home.css */
+
+:root {
+  --primary: #1976d2;
+  --accent: #4caf50;
+  --background: #f5f7fa;
+  --text: #222;
+  --card: #fff;
+  --shadow: 0 4px 16px rgba(25, 118, 210, 0.08);
+}
+
+body {
+  background: var(--background);
+}
+
+main.home-container {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  padding: 0rem 2.5rem 2.5rem 2.5rem; /* less top padding */
+  max-width: 900px;
+  margin: 2rem auto;
+  margin-top: 8rem;
+  background: var(--card);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.home-hero {
+
+  text-align: center;
+
+}
+
+.home-hero h1 {
+  color: var(--primary);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.home-hero p {
+  color: var(--text);
+  font-size: 1.2rem;
+}
+
+.home-benefits-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  gap: 2rem;
+}
+
+.home-benefits-list {
+  margin: 0;
+  padding: 0 1rem 0 0;
+  list-style: disc inside;
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+.home-benefits-section h2 {
+  color: var(--accent);
+  margin-bottom: 0.7rem;
+}
+
+.home-image {
+  width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.10);
+  background: #e8f5e9;
+  padding: 1rem;
+}
+
+.home-cta {
+  text-align: center;
+}
+
+.home-cta-button {
+  padding: 1.1rem 2.5rem;
+  font-size: 1.25rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.home-cta-button:hover {
+  background: #1251a3; /* a darker shade for hover */
+  transform: translateY(-2px) scale(1.03);
+}
