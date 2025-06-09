@@ -5,12 +5,12 @@ import App from "../App.jsx";
 const Navbar = () => {
     return (
         <nav className="navbar">
-            <p className="nav-title">Website Name</p>
+            <p className="nav-title">WealthSprout</p>
             <ul className="nav-list">
                 <li className="nav-item"><Link to="/">Home</Link></li>
-                <li className="nav-item"><Link to="/page1">Page 1</Link></li>
-                <li className="nav-item"><Link to="/page2">Page 2</Link></li>
-                <li className="nav-item"><Link to="/page3">Page 3</Link></li>
+                <li className="nav-item"><Link to="/page1">Comparisons</Link></li>
+                <li className="nav-item"><Link to="/page2">401(K)</Link></li>
+                <li className="nav-item"><Link to="/page3">Roth IRA</Link></li>
             </ul>
         </nav>
     );
