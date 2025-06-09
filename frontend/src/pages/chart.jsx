@@ -3,7 +3,7 @@ import { Line } from 'react-chartjs-2';
 import axios from 'axios';
 import 'chart.js/auto';
 
-const GrowthChart = ({ currentAge, retirementAge, annualContribution }) => {
+const GrowthChart = ({ currentAge, retirementAge, annualContribution, incomePercent, annualReturn }) => {
   const [chartData, setChartData] = useState(null);
 
   useEffect(() => {
@@ -44,7 +44,7 @@ const GrowthChart = ({ currentAge, retirementAge, annualContribution }) => {
     .catch(error => {
       console.error('Error fetching chart data:', error);
     });
-  }, [currentAge, retirementAge, annualContribution, incomePercent, annualReturn, accountType]);
+  }, [currentAge, retirementAge, annualContribution, incomePercent, annualReturn]);
 
   if (!chartData) return <p>Loading chart...</p>;
 
