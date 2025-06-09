@@ -74,7 +74,11 @@ function Page2() {
         ) : (
           <p className="placeholder">Your results will appear here.</p>
         )}
+
+        <GrowthChart />
       </div>
+
+
     </div>
   );
 }
