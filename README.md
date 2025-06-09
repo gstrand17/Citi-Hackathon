@@ -3,6 +3,7 @@
 ## Run Backend
 cd backend <br>
 source venv/bin/activate <br>
+pip install flask flask-cors <br>
 flask run <br>
 
 ## Run Frontend
