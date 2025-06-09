@@ -1,9 +1,8 @@
 
 import GrowthChart from './chart';
 import React, { useState, useEffect } from 'react';
-
 import './Page2.css';
-import GrowthChart from './chart';
+
 function Page2() {
   const [estimate, setEstimate] = useState(null);
   const [error, setError] = useState(null);
@@ -41,6 +40,7 @@ function Page2() {
       ) : (
         <p>Loading estimate...</p>
       )}
+      <GrowthChart />
     </div>
   );
 }
