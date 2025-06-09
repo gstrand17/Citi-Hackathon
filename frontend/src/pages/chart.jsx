@@ -69,7 +69,7 @@ const GrowthChart = ({ x_axis, y_axis }) => {
   return (
     <div className="bg-white p-6 rounded shadow">
       <h3 className="text-xl font-semibold mb-4 text-center">📈 Growth Over Time</h3>
-      <Line data={chartData} options={chartData}/>
+      <Line data={chartData} options={chartOptions}/>
     </div>
   );
 };
