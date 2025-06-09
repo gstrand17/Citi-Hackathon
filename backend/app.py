@@ -18,7 +18,7 @@ def calculate_retirement_value(current_age, retirement_age, annual_contribution,
         total += annual_contribution * ((1 + annual_return) ** (years - year + 1))
         ages.append(year)
         amount_per_year.append(total)
-    return total
+    return total, ages, amount_per_year
 
 @app.route('/trad401k', methods=['GET'])
 def trad_401k():
@@ -82,20 +82,3 @@ def roth_ira():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-# import React, { useEffect, useState } from 'react';
-
-# function RothIRAEstimate() {
-#   const [estimate, setEstimate] = useState(null);
-#   const [error, setError] = useState(null);
-
-#   useEffect(() => {
-#     const params = new URLSearchParams({
-#       current_age: 25,
-#       retirement_age: 65,
-#       annual_contribution: 60000,
-#       income_percent: 0.1,
-#       annual_return: 0.07
-#     });
-
-#     fetch(`http://127.0.0.1:5000/rothira?${params.toString()}`)
