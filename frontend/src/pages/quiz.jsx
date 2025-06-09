@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Quiz.css';
 
 const Quiz = () => {
   const [step, setStep] = useState(0);
@@ -34,18 +35,18 @@ const Quiz = () => {
   };
 
   return (
-    <div className="mt-6 bg-white p-6 rounded shadow text-center">
-      <h3 className="text-xl font-semibold mb-4">📋 Quick Quiz: Find Your Fit</h3>
+    <div className="quiz-container">
+      <h3 className="quiz-title">Quick Quiz: Find Your Fit</h3>
 
       {step < questions.length ? (
         <>
-          <p className="mb-4 text-lg">{questions[step].question}</p>
-          <div className="flex justify-center gap-6">
+          <p className="quiz-question">{questions[step].question}</p>
+          <div className="quiz-options">
             {questions[step].options.map((option) => (
               <button
                 key={option}
                 onClick={() => handleAnswer(option)}
-                className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+                className="quiz-button"
               >
                 {option}
               </button>
@@ -54,8 +55,8 @@ const Quiz = () => {
         </>
       ) : (
         <div>
-          <p className="text-lg mb-2">✅ Based on your answers, you should consider:</p>
-          <p className="text-2xl font-bold text-green-600">{getResult()}</p>
+          <p className="quiz-result-label">Based on your answers, you should consider:</p>
+          <p className="quiz-result">{getResult()}</p>
         </div>
       )}
     </div>
