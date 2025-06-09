@@ -7,7 +7,7 @@ function Page2() {
     current_age: 25,
     retirement_age: 65,
     annual_contribution: 60000,
-    income_percent: 0.1,
+    income_percent: 10,
     annual_return: 0.07
   });
 
@@ -57,7 +57,7 @@ function Page2() {
         <input name="annual_contribution" type="number" value={form.annual_contribution} onChange={handleChange} />
 
         <label>Income % Invested</label>
-        <input name="income_percent" type="number" step="0.10" value={form.income_percent} onChange={handleChange} />
+        <input name="income_percent" type="number" step="10" value={form.income_percent} onChange={handleChange} />
 
         <label>Annual Return %</label>
         <input name="annual_return" type="number" step="0.01" value={form.annual_return} onChange={handleChange} />
