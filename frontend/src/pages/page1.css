@@ -21,6 +21,7 @@
     background: var(--card);
     border-radius: 18px;
     box-shadow: var(--shadow);
+    animation: fadeInUp 0.5s ease-in-out;
   }
   
   .page-header {
@@ -79,5 +80,16 @@
     padding: 1rem;
     font-size: 0.9rem;
     color: #666;
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
