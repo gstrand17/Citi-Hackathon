@@ -22,6 +22,45 @@ const GrowthChart = ({ x_axis, y_axis }) => {
       ],
     };
 
+    const chartOptions = {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false
+          },
+          title: {
+            display: false
+          }
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: 'Age',
+              font: {
+                size: 14,
+                weight: 'bold'
+              }
+            }
+          },
+          y: {
+            title: {
+              display: true,
+              text: 'Account Value ($)',
+              font: {
+                size: 14,
+                weight: 'bold'
+              }
+            },
+            ticks: {
+              callback: function (value) {
+                return '$' + value.toLocaleString();
+              }
+            }
+          }
+        }
+      };
+
     setChartData(data);
   }, [x_axis, y_axis]);
 
@@ -30,7 +69,7 @@ const GrowthChart = ({ x_axis, y_axis }) => {
   return (
     <div className="bg-white p-6 rounded shadow">
       <h3 className="text-xl font-semibold mb-4 text-center">📈 Growth Over Time</h3>
-      <Line data={chartData} />
+      <Line data={chartData} options={chartData}/>
     </div>
   );
 };
