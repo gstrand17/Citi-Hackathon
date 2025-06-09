@@ -1,4 +1,5 @@
 import './Page1.css';
+import Quiz from './quiz.jsx';
 
 function Page1() {
   return (
@@ -47,6 +48,7 @@ function Page1() {
             Choose a Roth IRA if you want more control and meet the income limits.
             Choose a Roth 401(k) if your employer offers one and you want higher contribution limits.
           </p>
+          <Quiz />
         </section>
 
         <section className="mb-8 card bg-yellow-100">
