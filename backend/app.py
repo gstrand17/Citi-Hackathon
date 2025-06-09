@@ -40,7 +40,7 @@ def trad_401k():
     final_amount,ages, amount_per_year = calculate_retirement_value(current_age, retirement_age, annual_income * income_percent, annual_return)
 
     return jsonify({
-        "account_type": "Traditional 401k",
+        "account_type": "Traditional 401(k)",
         "current_age": current_age,
         "retirement_age": retirement_age,
         "annual_contribution": annual_income * income_percent,
