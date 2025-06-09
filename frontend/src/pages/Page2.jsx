@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import GrowthChart from './chart';
 import './Page2.css';
 
 function Page2() {
@@ -27,6 +28,8 @@ function Page2() {
       />
       <button onClick={handleSubmit}>Send</button>
       <p>Response: {response}</p>
+
+      <GrowthChart />
     </div>
   );
 }
