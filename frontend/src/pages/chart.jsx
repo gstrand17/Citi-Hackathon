@@ -13,24 +13,30 @@ const GrowthChart = ({ currentAge, retirementAge, annualContribution }) => {
       params: {
         current_age: currentAge,
         retirement_age: retirementAge,
-        annual_contribution: annualContribution
+        annual_contribution: annualContribution,
+        income_percent: incomePercent,
+        annual_return: annualReturn
       }
     })
     .then(response => {
-      const growth = response.data.growth_data;
+        
+        const res = response.data;
 
-      const data = {
-        labels: growth.map(entry => entry.age),
-        datasets: [
-          {
-            label: 'Estimated 401(k) Value',
-            data: growth.map(entry => entry.value),
-            fill: true,
-            borderColor: '#1976d2',
-            backgroundColor: 'rgba(25, 118, 210, 0.1)',
-            tension: 0.3
-          }
-        ]
+        const labels = res.x_axis.map(yearOffset => currentAge + yearOffset); // convert to actual age
+        const values = res.y_axis;
+
+        const data = {
+            labels,
+            datasets: [
+            {
+                label: 'Estimated 401(k) Value',
+                data: values,
+                fill: true,
+                borderColor: '#1976d2',
+                backgroundColor: 'rgba(25, 118, 210, 0.1)',
+                tension: 0.3
+            }
+            ]
       };
 
       setChartData(data);
@@ -38,7 +44,7 @@ const GrowthChart = ({ currentAge, retirementAge, annualContribution }) => {
     .catch(error => {
       console.error('Error fetching chart data:', error);
     });
-  }, [currentAge, retirementAge, annualContribution]);
+  }, [currentAge, retirementAge, annualContribution, incomePercent, annualReturn, accountType]);
 
   if (!chartData) return <p>Loading chart...</p>;
 
