@@ -52,21 +52,34 @@ function Home() {
                 </section>
 
                 <section className="home-benefits-section">
-                    <div>
-                        <h2>Why Start Now?</h2>
+                    <div className="home-benefits-text">
+                        <h2>🌱 Why Start Investing Now?</h2>
+                        <p className="benefits-intro">
+                        The sooner you begin, the greater your potential to build lasting financial freedom. Start with small steps today that grow into big wins tomorrow.
+                        </p>
                         <ul className="home-benefits-list">
-                            <li>Save for retirement and build wealth</li>
-                            <li>Gain financial security</li>
-                            <li>Develop responsible money habits</li>
+                        <li>📈 Build long-term wealth with compounding</li>
+                        <li>🛡️ Gain peace of mind through financial security</li>
+                        <li>💡 Learn habits that empower your future self</li>
                         </ul>
                     </div>
-                    <div>
-                        <img src={financeGoalImg} alt="Financial Goals" className="home-image" />
+                    <div className="home-benefits-image-container">
+                        <img
+                        src={financeGoalImg}
+                        alt="Financial Goals"
+                        className="home-image"
+                        />
                     </div>
-                </section>
+                    </section>
 
-                {/* 🔽 Existing Learn More Toggle */}
-                <section className="home-dropdown-section">
+                <section className="home-cta">
+                    <button className="home-cta-button">
+                        Get Started
+                    </button>
+                </section>
+                
+                 {/* 🔽 Existing Learn More Toggle */}
+                 <section className="home-dropdown-section">
                     <button className="dropdown-toggle" onClick={() => setShowMore(prev => !prev)}>
                         {showMore ? 'Hide Details ▲' : 'Learn More ▼'}
                     </button>
@@ -80,12 +93,6 @@ function Home() {
                             </p>
                         </div>
                     )}
-                </section>
-
-                <section className="home-cta">
-                    <button className="home-cta-button">
-                        Get Started
-                    </button>
                 </section>
             </main>
 
@@ -108,6 +115,39 @@ function Home() {
                    </div>
                     ))}
                 </div>
+            </section>
+
+            <section className="video-section">
+            <h2 className="video-title">Recommended Videos</h2>
+            <div className="video-grid">
+                <div className="video-card">
+                <iframe
+                    src="https://www.youtube.com/embed/wf91rEGw88Q"
+                    title="Compound Interest Explained"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                ></iframe>
+                <p>📈 What is Compound Interest?</p>
+                </div>
+                <div className="video-card">
+                <iframe
+                    src="https://www.youtube.com/embed/5beqHhziyhs"
+                    title="Why Invest Early"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                ></iframe>
+                <p>⏳ Why Start Investing Early?</p>
+                </div>
+                <div className="video-card">
+                <iframe
+                    src="https://www.youtube.com/embed/UfNFA9naLX4"
+                    title="Diversified Portfolio"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                ></iframe>
+                <p>🧩 Building a Diversified Portfolio</p>
+                </div>
+            </div>
             </section>
         </>
     );
