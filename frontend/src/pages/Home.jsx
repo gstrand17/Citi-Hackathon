@@ -1,4 +1,4 @@
-import './Home.css';
+import './home.css';
 import financeGoalImg from '../assets/images/finance-goal.jpg';
 
 function Home() {
