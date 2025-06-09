@@ -14,7 +14,7 @@
   }
   
   .page-container {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     padding: 0rem 2.5rem 2.5rem 2.5rem;
     max-width: 900px;
     margin: 3rem auto 2rem auto;
@@ -24,7 +24,7 @@
   }
   
   .page-header {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: var(--primary);
     color: white;
     padding: 1.5rem;
