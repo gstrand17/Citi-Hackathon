@@ -20,9 +20,14 @@ function Page2() {
   };
 
   const handleSubmit = async () => {
-    const params = new URLSearchParams(form);
+    const adjustedForm = {
+      ...form,
+      income_percent: form.income_percent / 100  // convert to decimal
+    };
+  
+    const params = new URLSearchParams(adjustedForm);
     try {
-      const res = await fetch(`http://localhost:5000/rothira?${params.toString()}`);
+      const res = await fetch(`http://localhost:5000/trad401k?${params.toString()}`);
       const data = await res.json();
       if (data.error) {
         setEstimate(null);
@@ -40,7 +45,7 @@ function Page2() {
     <div className="ira-wrapper">
       {/* Left: Form */}
       <div className="ira-form">
-        <h2>Roth IRA Calculator</h2>
+        <h2>401(k) Calculator</h2>
 
         <label>Current Age</label>
         <input name="current_age" type="number" value={form.current_age} onChange={handleChange} />
