@@ -15,7 +15,7 @@ def calculate_retirement_value(current_age, retirement_age, annual_contribution,
     ages = []
     amount_per_year = []
     for year in range(1, years + 1):
-        total += annual_contribution * ((1 + annual_return) ** (years - year + 1))
+        total = (total  * ((1 + annual_return)))  + annual_contribution
         ages.append(year)
         amount_per_year.append(total)
     return total, ages, amount_per_year
