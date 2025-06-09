@@ -1,0 +1,78 @@
+/* Page1.css */
+
+:root {
+    --primary: #1976d2;
+    --accent: #4caf50;
+    --background: #f5f7fa;
+    --text: #222;
+    --card: #fff;
+    --shadow: 0 4px 16px rgba(25, 118, 210, 0.08);
+  }
+  
+  body {
+    background: var(--background);
+  }
+  
+  .page-container {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    padding: 0rem 2.5rem 2.5rem 2.5rem;
+    max-width: 900px;
+    margin: 8rem auto 2rem auto;
+    background: var(--card);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+  }
+  
+  .page-header {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--primary);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.2);
+  }
+  
+  .page-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .page-header p {
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+  
+  .section-title {
+    color: var(--primary);
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 0.7rem;
+    padding-top: 1.5rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.2rem;
+    color: var(--text);
+  }
+  
+  .card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.10);
+  }
+  
+  .card h3 {
+    font-size: 1.25rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
