@@ -1,34 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Page2.css';
-
 function Page2() {
-  const [name, setName] = useState('');
-  const [response, setResponse] = useState('');
+  const [estimate, setEstimate] = useState(null);
+  const [error, setError] = useState(null);
 
-  const handleSubmit = async () => {
-    const res = await fetch('http://127.0.0.1:5000/submit', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ name })
+  useEffect(() => {
+    const params = new URLSearchParams({
+      current_age: 25,
+      retirement_age: 65,
+      annual_contribution: 60000,
+      income_percent: 0.1,
+      annual_return: 0.07
     });
 
-    const data = await res.json();
-    setResponse(data.message);
-  };
+    fetch(`http://127.0.0.1:5000/rothira?${params.toString()}`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.error) setError(data.error);
+        else setEstimate(data);
+      })
+      .catch(err => setError('Request failed: ' + err.message));
+  }, []);
 
   return (
     <div>
-      <input className="input-field"
-        value={name}
-        onChange={e => setName(e.target.value)}
-        placeholder="Enter your name"
-      />
-      <button onClick={handleSubmit}>Send</button>
-      <p>Response: {response}</p>
+      <h2>Roth IRA Estimate</h2>
+      {error ? (
+        <p style={{ color: 'red' }}>Error: {error}</p>
+      ) : estimate ? (
+        <div>
+          <p>Account Type: {estimate.account_type}</p>
+          <p>Annual Contribution: ${estimate.annual_contribution.toFixed(2)}</p>
+          <p>Estimated Value at Retirement: ${estimate.estimated_value.toFixed(2)}</p>
+        </div>
+      ) : (
+        <p>Loading estimate...</p>
+      )}
     </div>
   );
 }
+
 
 export default Page2;
