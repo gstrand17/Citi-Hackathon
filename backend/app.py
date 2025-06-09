@@ -12,8 +12,12 @@ def home():
 def calculate_retirement_value(current_age, retirement_age, annual_contribution, annual_return):
     years = retirement_age - current_age
     total = 0
+    ages = []
+    amount_per_year = []
     for year in range(1, years + 1):
         total += annual_contribution * ((1 + annual_return) ** (years - year + 1))
+        ages.append(year)
+        amount_per_year.append(total)
     return total
 
 @app.route('/trad401k', methods=['GET'])
@@ -33,14 +37,16 @@ def trad_401k():
     if annual_income * income_percent >= 23500:
         return jsonify({"error": "The annual contribution is above the limit"}), 400
 
-    final_amount = calculate_retirement_value(current_age, retirement_age, annual_income * income_percent, annual_return)
+    final_amount,ages, amount_per_year = calculate_retirement_value(current_age, retirement_age, annual_income * income_percent, annual_return)
 
     return jsonify({
         "account_type": "Traditional 401k",
         "current_age": current_age,
         "retirement_age": retirement_age,
         "annual_contribution": annual_income * income_percent,
-        "estimated_value": final_amount
+        "estimated_value": final_amount,
+        "x_axis" : ages,
+        "y_axis" : amount_per_year
     })
 
 
@@ -61,25 +67,35 @@ def roth_ira():
     if annual_income * income_percent >= 7000:
         return jsonify({"error": "The annual contribution is above the limit"}), 400
 
-    final_amount = calculate_retirement_value(current_age, retirement_age, annual_income * income_percent, annual_return)
+    final_amount, ages, amount_per_year = calculate_retirement_value(current_age, retirement_age, annual_income * income_percent, annual_return)
 
     return jsonify({
         "account_type": "roth-ira",
         "current_age": current_age,
         "retirement_age": retirement_age,
         "annual_contribution": annual_income * income_percent,
-        "estimated_value": final_amount
+        "estimated_value": final_amount,
+        "x_axis" : ages,
+        "y_axis" : amount_per_year
     })
 
 
 if __name__ == '__main__':
     app.run(debug=True)
 
+# import React, { useEffect, useState } from 'react';
 
-#keep a block -> if above the limit 
-# roth 401k - 23500 -> 
-# tradiational, 
-# 
-# roth IRA limit -7000, 
-# also include the error amount
+# function RothIRAEstimate() {
+#   const [estimate, setEstimate] = useState(null);
+#   const [error, setError] = useState(null);
 
+#   useEffect(() => {
+#     const params = new URLSearchParams({
+#       current_age: 25,
+#       retirement_age: 65,
+#       annual_contribution: 60000,
+#       income_percent: 0.1,
+#       annual_return: 0.07
+#     });
+
+#     fetch(`http://127.0.0.1:5000/rothira?${params.toString()}`)
