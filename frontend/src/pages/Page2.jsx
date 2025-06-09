@@ -8,7 +8,7 @@ function Page2() {
     retirement_age: 65,
     annual_contribution: 60000,
     income_percent: 10,
-    annual_return: 0.07
+    annual_return: 7
   });
 
   const [estimate, setEstimate] = useState(null);
@@ -16,13 +16,17 @@ function Page2() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setForm(prev => ({ ...prev, [name]: value }));
+    setForm(prev => ({
+      ...prev,
+      [name]: name === 'income_percent' || name === 'annual_return' ? parseFloat(value) : value
+    }));
   };
-
+  
   const handleSubmit = async () => {
     const adjustedForm = {
       ...form,
-      income_percent: form.income_percent / 100  // convert to decimal
+      income_percent: form.income_percent / 100,
+      annual_return: form.annual_return / 100  // convert whole % to decimal
     };
   
     const params = new URLSearchParams(adjustedForm);
