@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import sprout from '../assets/sprout.png';
 import App from "../App.jsx";
 const Navbar = () => {
     return (
         <nav className="navbar">
             <p className="nav-title">WealthSprout</p>
+            <image className="nav-logo" src={sprout} alt="logo" />
             <ul className="nav-list">
                 <li className="nav-item"><Link to="/">Home</Link></li>
                 <li className="nav-item"><Link to="/page1">Comparisons</Link></li>
