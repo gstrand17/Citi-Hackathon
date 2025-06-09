@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import './Page2.css';
-import GrowthChart from './chart';
+//import GrowthChart from './chart';
 function Page2() {
   const [form, setForm] = useState({
     current_age: 25,
@@ -57,7 +57,7 @@ function Page2() {
         <input name="annual_contribution" type="number" value={form.annual_contribution} onChange={handleChange} />
 
         <label>Income % Invested</label>
-        <input name="income_percent" type="number" step="0.01" value={form.income_percent} onChange={handleChange} />
+        <input name="income_percent" type="number" step="0.10" value={form.income_percent} onChange={handleChange} />
 
         <label>Annual Return %</label>
         <input name="annual_return" type="number" step="0.01" value={form.annual_return} onChange={handleChange} />
@@ -79,7 +79,8 @@ function Page2() {
           <p className="placeholder">Your results will appear here.</p>
         )}
 
-        <GrowthChart />
+      {/*  <GrowthChart /> */}
+       
       </div>
 
 
