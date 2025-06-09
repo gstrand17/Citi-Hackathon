@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Page2.css';
+import GrowthChart from './chart';
 
 function Page3() {
   const [form, setForm] = useState({
@@ -85,6 +86,9 @@ function Page3() {
         ) : (
           <p className="placeholder">Your results will appear here.</p>
         )}
+               {estimate?.x_axis && estimate?.y_axis && (
+  <GrowthChart x_axis={estimate.x_axis} y_axis={estimate.y_axis} />
+    )}
       </div>
     </div>
   );
