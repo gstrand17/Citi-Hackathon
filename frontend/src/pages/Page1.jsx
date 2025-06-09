@@ -1,4 +1,4 @@
-import './Page1.css';
+import './page1.css';
 import Quiz from './quiz.jsx';
 
 function Page1() {
