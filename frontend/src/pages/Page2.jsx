@@ -74,7 +74,11 @@ function Page2() {
           <p className="placeholder">Your results will appear here.</p>
         )}
 
-        <GrowthChart />
+        <GrowthChart currentAge={form.current_age}
+                      retirementAge={form.retirement_age}
+                      annualContribution={form.annual_contribution}
+                      incomePercent={form.income_percent}
+                      annualReturn={form.annual_return}/>
       </div>
 
 
