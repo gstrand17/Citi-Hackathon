@@ -60,7 +60,7 @@ function Page1() {
       </main>
 
       <footer>
-        &copy; 2025 Roth Insights. For educational purposes only.
+        &copy; 2025 WealthSprout. For educational purposes only.
       </footer>
     </div>
   );
