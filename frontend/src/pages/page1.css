@@ -17,7 +17,7 @@
     font-family: 'Segoe UI', Arial, sans-serif;
     padding: 0rem 2.5rem 2.5rem 2.5rem;
     max-width: 900px;
-    margin: 8rem auto 2rem auto;
+    margin: 3rem auto 2rem auto;
     background: var(--card);
     border-radius: 18px;
     box-shadow: var(--shadow);
@@ -28,8 +28,13 @@
     background-color: var(--primary);
     color: white;
     padding: 1.5rem;
+    margin-top: -3rem;
     text-align: center;
     box-shadow: 0 2px 8px rgba(25, 118, 210, 0.2);
+    width: auto;
+    margin-left: -1rem;
+    margin-right: -0.5rem;
+    
   }
   
   .page-header h1 {
