@@ -80,8 +80,8 @@ function Page3() {
         ) : estimate ? (
           <div className="ira-result">
             <p><strong>Account Type:</strong> {estimate.account_type}</p>
-            <p><strong>Annual Contribution:</strong> ${estimate.annual_contribution.toFixed(2)}</p>
-            <p><strong>Estimated Value at Retirement:</strong> ${estimate.estimated_value.toFixed(2)}</p>
+            <p><strong>Annual Contribution:</strong> ${estimate.annual_contribution.toLocaleString('en-US', { minimumFractionDigits: 2 })}</p>
+            <p><strong>Estimated Value at Retirement:</strong> ${estimate.estimated_value.toLocaleString('en-US', { minimumFractionDigits: 2 })}</p>
           </div>
         ) : (
           <p className="placeholder">Your results will appear here.</p>
