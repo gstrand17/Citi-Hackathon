@@ -1,5 +1,9 @@
+
+import GrowthChart from './chart';
 import React, { useState, useEffect } from 'react';
+
 import './Page2.css';
+
 function Page2() {
   const [estimate, setEstimate] = useState(null);
   const [error, setError] = useState(null);
@@ -24,6 +28,7 @@ function Page2() {
 
   return (
     <div>
+
       <h2>Roth IRA Estimate</h2>
       {error ? (
         <p style={{ color: 'red' }}>Error: {error}</p>
@@ -36,6 +41,7 @@ function Page2() {
       ) : (
         <p>Loading estimate...</p>
       )}
+      <GrowthChart />
     </div>
   );
 }
