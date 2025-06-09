@@ -1,9 +1,9 @@
 import { Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import Navbar from './pages/Navbar.jsx';
-import Page1 from './pages/page1.jsx';
-import Page2 from './pages/page2.jsx';
-import Page3 from './pages/page3.jsx';
+import Page1 from './pages/Page1.jsx';
+import Page2 from './pages/Page2.jsx';
+import Page3 from './pages/Page3.jsx';
 import './App.css'
 
 function App() {
