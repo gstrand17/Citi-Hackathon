@@ -1,3 +1,63 @@
-.input-field{
-    margin: 6em;
-}
+.ira-wrapper {
+
+    display: flex;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 10rem auto 3rem; /* top, sides, bottom */
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .ira-form,
+  .ira-output {
+    flex: 1;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .ira-form h2,
+  .ira-output h2 {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+  }
+  
+  .ira-form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 500;
+  }
+  
+  .ira-form input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .ira-form button {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #1976d2;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .ira-result p {
+    margin: 0.8rem 0;
+    font-size: 1.1rem;
+  }
+  
+  .placeholder {
+    color: #777;
+    font-style: italic;
+  }
